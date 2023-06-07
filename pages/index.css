@@ -16,4 +16,9 @@
 @import url(../blocks/profile/__editButton/profile__editButton.css);
 @import url(../blocks/profile/__addButton/profile__addButton.css );
 
-
+/* bloco cards */
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__nameLike/card__nameLike.css);
+@import url(../blocks/card/__imageName/card__imageName.css);
+@import url(../blocks/card/__likeButton/card__likeButton.css);
