@@ -8,3 +8,9 @@
     bottom: 0;
     margin: auto;
 }
+
+@media screen and (max-width: 930px){
+    .popup__closeIconContainer{
+        width: 280px;
+    }
+}

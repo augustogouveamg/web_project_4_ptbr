@@ -2,3 +2,9 @@
     color: white;
     padding-left: 25px;
 }
+
+@media screen and (max-width: 930px){
+    .profile__info{
+        padding-left: 0;
+    }
+}

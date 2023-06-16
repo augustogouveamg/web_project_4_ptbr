@@ -5,3 +5,10 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin-top: 54px;
 }
+
+@media screen and (max-width: 930px){
+    .popup__inputNome{
+        width: 238px;
+        height: 17px;
+    }
+}
