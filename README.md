@@ -2,8 +2,7 @@
 
 ### Visão geral
 
-* Figma
-* Imagens
+    Projeto desenvolvido com HTML,CSS e JavaScript onde os usuários poderão adicionar, remover, ou curtir fotos.
 
 **Figma**
 
@@ -11,6 +10,4 @@
 
 **Imagens**
 
-A maneira como você fará isso no trabalho é exportando imagens diretamente do Figma — recomendamos fazer isso para praticar mais. Não se esqueça de otimizá-los [aqui](https://tinypng.com/), para que seu projeto carregue mais rápido.
-
-Divirta-se com JavaScript!
+* [Link para o projeto](https://augustogouveamg.github.io/web_project_4_ptbr/)
