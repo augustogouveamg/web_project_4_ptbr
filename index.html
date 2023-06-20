@@ -9,15 +9,15 @@
 </head>
 <body>
                 <!-- popup_opened -->
-    <div class="popup popup_opened">
+    <div class="popup">
         <div class="popup__closeIconContainer">
             <h2 class="popup__closeIcon">+</h2>
-            <div class="popup__container">
+            <form class="popup__container">
                 <h2 class="popup__title">Editar perfil</h2>
-                <input class="popup__inputNome" type="text" name="nomePerfil" placeholder="">
-                <input class="popup__inputSobre" type="text" name="sobreMim" placeholder="">
-                <button class="popup__button">Salvar</button>
-            </div>   
+                <input class="popup__inputNome" type="text" name="nomePerfil">
+                <input class="popup__inputSobre" type="text" name="sobreMim">
+                <button class="popup__button" type="submit">Salvar</button>
+            </form>   
         </div> 
     </div>
     <div class="page">
@@ -45,42 +45,42 @@
                     <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Vale de Yosemite ">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Vale de Yosemite</h2>
-                        <button class="card__likeButton"><img src="./images/coracao.png" alt="botão para curtir"></button>
+                        <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Lago Louise">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Lago Louise</h2>
-                        <button class="card__likeButton"><img src="./images/coracao.png" alt="botão para curtir"></button>
+                        <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Montanhas Care">
                     <div class="card__nameLike">
-                        <h2 class="card__imageName">Montanhas Care...</h2>
-                        <button class="card__likeButton"><img src="./images/coracao.png" alt="botão para curtir"></button>
+                        <h2 class="card__imageName">Montanhas Caremolte3d2r</h2>
+                        <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1404681-unsplash-1.png" alt="Latemar">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Latemar</h2>
-                        <button class="card__likeButton"><img src="./images/coracao.png" alt="botão para curtir"></button>
+                        <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1556355-unsplash-1.png" alt="Vanoise">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Vanoise Nationa...</h2>
-                        <button class="card__likeButton"><img src="./images/coracao.png" alt="botão para curtir"></button>
+                        <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/kirill-pershin-1088404-unsplash (1).png" alt="Lago di Braies">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Lago di Braies</h2>
-                        <button class="card__likeButton"><img src="./images/coracao.png" alt="botão para curtir"></button>
+                        <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
                 </div>
 
@@ -90,5 +90,6 @@
             <h3 class="footer__copyright">© 2021 Around The U.S.</h3>
           </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

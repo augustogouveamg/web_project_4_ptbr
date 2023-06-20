@@ -2,7 +2,8 @@
     align-self: center;
     display: flex;
     padding: 25px 15px 31px 21px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    width: 100%;
 }

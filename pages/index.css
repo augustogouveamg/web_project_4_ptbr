@@ -34,6 +34,8 @@
 @import url(../blocks/card/__nameLike/card__nameLike.css);
 @import url(../blocks/card/__imageName/card__imageName.css);
 @import url(../blocks/card/__likeButton/card__likeButton.css);
+@import url(../blocks/card/__likeButton/card_likeButton-on.css);
+@import url(../blocks/card/__likeButton/card__likeButton-none.css);
 
 /* footer */
 @import url(../blocks/footer/footer.css);
