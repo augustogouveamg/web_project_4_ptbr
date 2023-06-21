@@ -8,6 +8,6 @@
 
 * [Link para o projeto no Figma](https://www.figma.com/file/XfB6BSINvliub43JgKza1e/WEB.-Sprint-4.-Around-The-U.S.-desktop-%2B-mobile-pt)
 
-**Imagens**
+**Projeto**
 
 * [Link para o projeto](https://augustogouveamg.github.io/web_project_4_ptbr/)
