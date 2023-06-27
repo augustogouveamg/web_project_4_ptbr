@@ -2,7 +2,18 @@
 
 ### Visão geral
 
-    Projeto desenvolvido com HTML,CSS e JavaScript onde os usuários poderão adicionar, remover, ou curtir fotos.
+* Descrição
+* Tecnologias Utilizadas
+* Figma
+* Página no GitHub
+
+**Descrição**
+
+    Página interativa, espelhando uma rede social, onde o usuário poderá adicionar, remover e curtir fotos.
+
+**Tecnologias Utilizadas**
+
+* HTML, CSS e JS.
 
 **Figma**
 
