@@ -20,6 +20,18 @@
             </form>   
         </div> 
     </div>
+        <!-- popup novo card -->
+    <div class="popup popupNewItem">
+        <div class="popup__closeIconContainer">
+            <h2 class="popup__closeIcon closeIconNewItem">+</h2>
+            <form class="popup__container">
+                <h2 class="popup__title">New Place</h2>
+                <input class="popup__inputNome" type="text" name="nomePerfil" placeholder="Title">
+                <input class="popup__inputSobre" type="text" name="sobreMim" placeholder="Image URL">
+                <button class="popup__button" type="submit">Salvar</button>
+            </form>   
+        </div> 
+    </div>
     <div class="page">
         <div>
             <header class="header">
@@ -42,14 +54,14 @@
             <!-- Cards -->
             <ul class="cards">
                 <li class="card">
-                    <img src="./images/ValedeYosemite.png" alt="Vale de Yosemite">
+                    <img class="card__image" src="./images/ValedeYosemite.png" alt="Vale de Yosemite">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Vale de Yosemite</h2>
                         <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="./images/LagoLouise.png" alt="Lago Louise">
+                    <img class="card__image" src="./images/LagoLouise.png" alt="Lago Louise">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Lago Louise</h2>
                         <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
@@ -70,12 +82,12 @@
                     </div>
                 </li>
                 <li class="card">
-                    <img src="./images/Vanoise.png" alt="Vanoise">
+                    <img  class="card__image" src="./images/Vanoise.png" alt="Vanoise">
                     <div class="card__nameLike">
                         <h2 class="card__imageName">Vanoise Nationa...</h2>
                         <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
                     </div>
-                </li>
+                </li>              
                 <li class="card">
                     <img src="./images/LagodiBraies.png" alt="Lago di Braies">
                     <div class="card__nameLike">
@@ -90,6 +102,15 @@
             <p class="footer__copyright">© 2021 Around The U.S.</p>
           </footer>
     </div>
+    <template id="card">
+        <li class="card">
+            <img class="card__image">
+            <div class="card__nameLike">
+                <h2 class="card__imageName"></h2>
+                <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
+            </div>
+        </li>
+      </template>
     <script src="script.js"></script>
 </body>
 </html>
