@@ -31,18 +31,20 @@ const initialCards = [
   ]; 
 // fechar popup
 function fecharPopup(element){
-    console.log(element);
     let popup = document.querySelector(element);
-    console.log(element);
     popup.classList.remove("popup_opened");
+}
+// abrir popup
+function openPopup(element){
+  let popup = document.querySelector(element);
+  popup.classList.add("popup_opened");
 }
 botaoFechar.addEventListener("click",()=>{
     fecharPopup(".popup");
 });
 // abrir popup
-botaoEditarPerfil.addEventListener("click",function(){
-    let popup = document.querySelector(".popup");
-    popup.classList.add("popup_opened");
+botaoEditarPerfil.addEventListener("click",()=>{
+  openPopup(".popup");
 })
 //Nome e Sobre ja preenchidos no popup
 campoNome.value = document.querySelector(".profile__name").innerText;
@@ -50,6 +52,7 @@ campoSobre.value = document.querySelector(".profile__about").innerText;
 
 //alterar o nome e o sobre
 function handleProfileFormSubmit(evt) {
+    console.log("evento:"+evt);
     evt.preventDefault();
     let nameInput = document.querySelector(".popup__inputNome").value;
     let jobInput = document.querySelector(".popup__inputSobre").value;
@@ -63,13 +66,8 @@ formElement.addEventListener('submit', handleProfileFormSubmit);
 
 //Botao curtir
 function curtir(botao){
-    console.log("teste");
-    console.log(botao)
     let card = botao.closest('.card__nameLike');
-    console.log(card)
     let botaoLike = card.querySelector("img");
-    console.log(botaoLike.src);
-    console.log(botaoLike.src.includes("Vector"));
     if(botaoLike.src.includes("coracao")){
         botaoLike.src = "./images/like.svg";
     }
@@ -83,8 +81,7 @@ function addCard(name, link){
     const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
     cardElement.querySelector(".card__image").src = link;
     cardElement.querySelector(".card__imageName").textContent = name;
-    console.log(cardElement);
-    cards.append(cardElement);
+    cards.prepend(cardElement);
 }
 //Adiciona os cards iniciais
 initialCards.forEach(inicialCard =>{
@@ -94,14 +91,64 @@ initialCards.forEach(inicialCard =>{
 //Abrir popup para adicionar novo item
 const buttonAddCard = document.querySelector(".profile__addButton");
 buttonAddCard.addEventListener("click", ()=>{
-    let popup = document.querySelector(".popupNewItem");
-    console.log(popup);
-    popup.classList.add("popup_opened");
+  openPopup(".popupNewItem")
 })
 
 //Fechar popup para adicionar novo intem
 const buttonCloseNewItem = document.querySelector(".closeIconNewItem");
-console.log(buttonCloseNewItem)
 buttonCloseNewItem.addEventListener("click", function(){
     fecharPopup(".popupNewItem")
+})
+
+//Adicionar um cartão inserido pelo usuário
+const formElementNewItem = document.querySelector(".popupNewItem__container");
+function cardFormSubmit(evt){
+  evt.preventDefault();
+  let title = document.querySelector(".popupNewItem__title").value;
+  let link = document.querySelector(".popupNewItemUrl").value;
+  addCard(title,link);
+  fecharPopup(".popupNewItem")
+}
+formElementNewItem.addEventListener('submit',cardFormSubmit);
+
+//excluir card
+const buttonDelet = document.querySelectorAll(".card__delet");
+buttonDelet.forEach((button)=>{
+  button.addEventListener("click",cardDelet)
+})
+function cardDelet (evt) {
+  console.log(evt);
+  const card  = evt.target.closest(".card");
+  console.log(card);
+  card.remove();
+}
+
+//abrir imagem
+const images = document.querySelectorAll(".card__image");
+images.forEach((image)=>{
+  image.addEventListener("click",imageZoom);
+})
+
+function imageZoom(evt){
+  console.log(evt);
+  const popupImage = document.querySelector(".popup__image")
+  const card  = evt.target.closest(".card__image");
+  
+  console.log(popupImage);
+  console.log(evt.target.closest(".card__image"))
+  popupImage.src = card.src;
+  console.log(card)
+  const namePopup= document.querySelector(".popup__nameCard")
+  const nameFoto = document.querySelector(".card__imageName");
+  console.log(evt.target.closest(".card__imageName"));
+  console.log(namePopup,"--",nameFoto)
+  namePopup.textContent = nameFoto.textContent
+  openPopup(".popup__zoom")
+  
+}
+
+//fechar imagem
+const closeImage = document.querySelector(".popup__closeImage")
+closeImage.addEventListener("click",()=>{
+  fecharPopup(".popup__zoom");
 })
