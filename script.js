@@ -127,42 +127,15 @@ function cardDelet (evt) {
 const images = document.querySelectorAll(".card__image");
 images.forEach((image)=>{
   image.addEventListener("click",function (evt){
-    console.log(evt + "o evt");
     let popupImage = document.querySelector(".popup__image")
     let card  = evt.target.closest(".card__image");
-    
-    console.log(popupImage);
-    console.log(evt.target.closest(".card__image"))
-    popupImage.src = card.src;
-    console.log(card)
+    let nameCard  = evt.target.closest(".card").querySelector(".card__imageName").innerText;
     const namePopup= document.querySelector(".popup__nameCard")
-    const nameFoto = document.querySelector(".card__imageName");
-    console.log(evt.target.closest(".card__imageName"));
-    console.log(namePopup,"--",nameFoto)
-    namePopup.textContent = nameFoto.textContent
-    openPopup(".popup__zoom")
-    
+    popupImage.src = card.src;
+    namePopup.textContent = nameCard;
+    openPopup(".popup__zoom") 
   });
-
 })
-
-/*function imageZoom(evt){
-  console.log(evt);
-  const popupImage = document.querySelector(".popup__image")
-  const card  = evt.target.closest(".card__image");
-  
-  console.log(popupImage);
-  console.log(evt.target.closest(".card__image"))
-  popupImage.src = card.src;
-  console.log(card)
-  const namePopup= document.querySelector(".popup__nameCard")
-  const nameFoto = document.querySelector(".card__imageName");
-  console.log(evt.target.closest(".card__imageName"));
-  console.log(namePopup,"--",nameFoto)
-  namePopup.textContent = nameFoto.textContent
-  openPopup(".popup__zoom")
-  
-}*/
 
 //fechar imagem
 const closeImage = document.querySelector(".popup__closeImage")

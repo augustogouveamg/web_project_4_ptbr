@@ -1,5 +1,5 @@
 .popup__imageBlock{
-  position: absolute;
+  position: relative;
   max-height: 75vh;
   max-width: 75vh;
   top: 0;
