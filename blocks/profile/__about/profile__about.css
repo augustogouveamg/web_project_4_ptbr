@@ -5,9 +5,13 @@
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-@media screen and (max-width: 930px){
+@media screen and (max-width: 480px){
     .profile__about{
         font-weight: 400;
         font-size: 14px;

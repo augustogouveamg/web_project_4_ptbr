@@ -1,84 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./fonts.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <title>EUA Afora</title>
-</head>
-<body>
-                <!-- popup_opened -->
+  </head>
+  <body>
+    <!-- popup_opened -->
     <div class="popup">
-        <div class="popup__closeIconContainer">
-            <h2 class="popup__closeIcon">+</h2>
-            <form class="popup__container">
-                <h2 class="popup__title">Editar perfil</h2>
-                <input class="popup__inputNome" type="text" name="nomePerfil">
-                <input class="popup__inputSobre" type="text" name="sobreMim">
-                <button class="popup__button" type="submit">Salvar</button>
-            </form>   
-        </div> 
+      <div class="popup__closeIconContainer">
+        <h2 class="popup__closeIcon">+</h2>
+        <form class="popup__container">
+          <h2 class="popup__title">Editar perfil</h2>
+          <input class="popup__inputName" type="text" name="nomePerfil" />
+          <input class="popup__inputSobre" type="text" name="sobreMim" />
+          <button class="popup__button" type="submit">Salvar</button>
+        </form>
+      </div>
     </div>
-        <!-- popup novo card -->
+    <!-- popup novo card -->
     <div class="popup popupNewItem">
-        <div class="popup__closeIconContainer">
-            <h2 class="popup__closeIcon closeIconNewItem">+</h2>
-            <form class="popup__container popupNewItem__container">
-                <h2 class="popup__title">New Place</h2>
-                <input class="popup__inputNome popupNewItem__title" type="text" name="nomePerfil" placeholder="Title">
-                <input class="popup__inputSobre popupNewItemUrl" type="text" name="sobreMim" placeholder="Image URL">
-                <button class="popup__button" type="submit"> Criar </button>
-            </form>   
-        </div> 
+      <div class="popup__closeIconContainer">
+        <h2 class="popup__closeIcon closeIconNewItem">+</h2>
+        <form class="popup__container popupNewItem__container">
+          <h2 class="popup__title">New Place</h2>
+          <input
+            class="popup__inputName popupNewItem__title"
+            type="text"
+            name="nomePerfil"
+            placeholder="Title"
+          />
+          <input
+            class="popup__inputSobre popupNewItemUrl"
+            type="text"
+            name="sobreMim"
+            placeholder="Image URL"
+          />
+          <button class="popup__button" type="submit">Criar</button>
+        </form>
+      </div>
     </div>
-      <!-- popup Imagem Ampliada-->
-      <div class="popup popup__zoom">
-        <div class="popup__imageBlock">
-            <h2 class="popup__closeIcon popup__closeImage">+</h2>
-            <img class = "popup__image">
-            <figcaption class="popup__nameCard"></figcaption>
-        </div>
+    <!-- popup Imagem Ampliada-->
+    <div class="popup popup_zoom">
+      <div class="popup__imageBlock">
+        <h2 class="popup__closeIcon popup__closeImage">+</h2>
+        <img class="popup__image" alt="imagem ampliada" />
+        <figcaption class="popup__nameCard"></figcaption>
+      </div>
     </div>
     <div class="page">
-        <div>
-            <header class="header">
-                <h1 class="header__title">Around</h1>
-                <h2 class="header__subTitle">The U.S</h2>
-            </header>
-            <div class="page__linha"></div>
-            <!-- Profile -->
-            <div class="profile">   
-                <img class="profile__avatar" src="images/avatar.png" alt="Foto do perfil">
-                <div class="profile__info">
-                    <div class="profile__nameEditButton"> 
-                        <h2 class="profile__name">Jacques Cousteau</h2>
-                        <button class="profile__editButton"> <img src="images/pen.png" alt="botão de editar"></button>
-                    </div>
-                    <h3 class="profile__about">Explorar</h3>
-                </div>
-                <button class="profile__addButton"> <img src="images/+.png" alt="botão de adicionar"></button>
+      <div>
+        <header class="header">
+          <h1 class="header__title">Around</h1>
+          <h2 class="header__subTitle">The U.S</h2>
+        </header>
+        <div class="page__linha"></div>
+        <!-- Profile -->
+        <div class="profile">
+          <img
+            class="profile__avatar"
+            src="images/avatar.png"
+            alt="Foto do perfil"
+          />
+          <div class="profile__info">
+            <div class="profile__nameEditButton">
+              <h2 class="profile__name">Jacques Cousteau</h2>
+              <button class="profile__editButton">
+                <img src="images/pen.png" alt="botão de editar" />
+              </button>
             </div>
-            <!-- Cards -->
-            <ul class="cards">
-            </ul>
-        </div>    
-        <footer class="footer">
-            <p class="footer__copyright">© 2021 Around The U.S.</p>
-          </footer>
+            <h3 class="profile__about">Explorar</h3>
+          </div>
+          <button class="profile__addButton">
+            <img src="images/add.png" alt="botão de adicionar" />
+          </button>
+        </div>
+        <!-- Cards -->
+        <ul class="cards"></ul>
+      </div>
+      <footer class="footer">
+        <p class="footer__copyright">© 2023 Around The U.S.</p>
+      </footer>
     </div>
     <template id="card">
-        <li class="card">
-            <button class="card__delet">
-                <img src="./images/Trash.png" alt="botão para excluir">
-            </button>  
-            <img class="card__image">
-            <div class="card__nameLike">
-                <h2 class="card__imageName"></h2>
-                <button class="card__likeButton"  onclick=curtir(this)><img src="./images/coracao.svg" alt="botão para curtir"></button>
-            </div>
-        </li>
-      </template>
+      <li class="card">
+        <button class="card__delete">
+          <img src="./images/trash.png" alt="botão para excluir" />
+        </button>
+        <img class="card__image" alt="uma paisagem" />
+        <div class="card__nameLike">
+          <h2 class="card__imageName"></h2>
+          <button class="card__likeButton">
+            <img src="./images/coracao.svg" alt="botão para curtir" />
+          </button>
+        </div>
+      </li>
+    </template>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

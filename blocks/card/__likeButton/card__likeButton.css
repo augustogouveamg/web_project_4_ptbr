@@ -1,13 +1,13 @@
-.card__likeButton{
-    width: 21px;
-    height: 19px;
-    align-self: center;
-    margin-left: 10px;
-    border:none;
-    background:none;
-    cursor: pointer;
+.card__likeButton {
+  width: 21px;
+  height: 19px;
+  align-self: center;
+  margin-left: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.card__likeButton:hover{
-    opacity: 0.5;
+.card__likeButton:hover {
+  opacity: 0.5;
 }
