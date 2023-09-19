@@ -1,10 +1,10 @@
-.profile__info{
-    color: white;
-    padding-left: 25px;
+.profile__info {
+  color: white;
+  padding-right: 50px;
 }
 
-@media screen and (max-width: 480px){
-    .profile__info{
-        padding-left: 0;
-    }
+@media screen and (max-width: 785px) {
+  .profile__info {
+    padding-right: 0;
+  }
 }

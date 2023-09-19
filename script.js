@@ -1,7 +1,7 @@
-const buttonFechar = document.querySelector(".popup__closeIcon");
-const buttonEditarPerfil = document.querySelector(".profile__editButton");
+const closeButton = document.querySelector(".popup__closeIcon");
+const buttonEditProfile = document.querySelector(".profile__editButton");
 const fieldName = document.querySelector(".popup__inputName");
-const campoSobre = document.querySelector(".popup__inputSobre");
+const fieldAbout = document.querySelector(".popup__inputSobre");
 const formElement = document.querySelector(".popup__container");
 const initialCards = [
   {
@@ -39,36 +39,33 @@ function openPopup(element) {
   const popup = document.querySelector(element);
   popup.classList.add("popup_opened");
 }
-buttonFechar.addEventListener("click", () => {
+closeButton.addEventListener("click", () => {
   fecharPopup(".popup");
 });
 // abrir popup
-buttonEditarPerfil.addEventListener("click", () => {
+buttonEditProfile.addEventListener("click", () => {
   openPopup(".popup");
 });
 //Nome e Sobre ja preenchidos no popup
 fieldName.value = document.querySelector(".profile__name").innerText;
-campoSobre.value = document.querySelector(".profile__about").innerText;
+fieldAbout.value = document.querySelector(".profile__about").innerText;
 
 //alterar o nome e o sobre
 function handleProfileFormSubmit(evt) {
-  console.log("evento:" + evt);
   evt.preventDefault();
   const nameInput = document.querySelector(".popup__inputName").value;
   const jobInput = document.querySelector(".popup__inputSobre").value;
   const fieldName = document.querySelector(".profile__name");
-  const campoSobre = document.querySelector(".profile__about");
+  const fieldAbout = document.querySelector(".profile__about");
   fieldName.innerText = nameInput;
-  campoSobre.innerText = jobInput;
+  fieldAbout.innerText = jobInput;
   fecharPopup();
 }
 formElement.addEventListener("submit", handleProfileFormSubmit);
 
 //Botao curtir
 function like(button) {
-  console.log("buttao" + button);
   const card = button.target.closest(".card__likeButton");
-  console.log("card" + card);
   const buttonLike = card.querySelector("img");
   if (buttonLike.src.includes("coracao")) {
     buttonLike.src = "./images/like.svg";
@@ -82,8 +79,9 @@ function addCard(name, link) {
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   cardElement.querySelector(".card__image").src = link;
   cardElement.querySelector(".card__imageName").textContent = name;
-  const delet = cardElement.querySelectorAll(".card__delete");
-  delet.forEach((button) => {
+  cardElement.querySelector(".card__image").alt = name;
+  const remove = cardElement.querySelectorAll(".card__delete");
+  remove.forEach((button) => {
     button.addEventListener("click", cardDelet);
   });
   cards.prepend(cardElement);
@@ -116,8 +114,8 @@ function cardFormSubmit(evt) {
   const title = document.querySelector(".popupNewItem__title").value;
   const link = document.querySelector(".popupNewItemUrl").value;
   addCard(title, link);
-  const delet = document.querySelectorAll(".card__delete");
-  delet.addEventListener("click", cardDelet);
+  const remove = document.querySelectorAll(".card__delete");
+  remove.addEventListener("click", cardDelet);
   fecharPopup(".popupNewItem");
 }
 formElementNewItem.addEventListener("submit", cardFormSubmit);
@@ -128,9 +126,7 @@ buttonDelet.forEach((button) => {
   button.addEventListener("click", cardDelet);
 });
 function cardDelet(evt) {
-  console.log(evt);
   const card = evt.target.closest(".card");
-  console.log(card);
   card.remove();
 }
 

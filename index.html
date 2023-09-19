@@ -15,8 +15,18 @@
         <h2 class="popup__closeIcon">+</h2>
         <form class="popup__container">
           <h2 class="popup__title">Editar perfil</h2>
-          <input class="popup__inputName" type="text" name="nomePerfil" />
-          <input class="popup__inputSobre" type="text" name="sobreMim" />
+          <input
+            class="popup__inputName"
+            type="text"
+            name="nomePerfil"
+            placeholder="Nome"
+          />
+          <input
+            class="popup__inputSobre"
+            type="text"
+            name="sobreMim"
+            placeholder="Descrição"
+          />
           <button class="popup__button" type="submit">Salvar</button>
         </form>
       </div>
@@ -47,8 +57,10 @@
     <div class="popup popup_zoom">
       <div class="popup__imageBlock">
         <h2 class="popup__closeIcon popup__closeImage">+</h2>
-        <img class="popup__image" alt="imagem ampliada" />
-        <figcaption class="popup__nameCard"></figcaption>
+        <figure>
+          <img class="popup__image" alt="imagem ampliada" />
+          <p class="popup__nameCard"></p>
+        </figure>
       </div>
     </div>
     <div class="page">
@@ -90,7 +102,7 @@
         <button class="card__delete">
           <img src="./images/trash.png" alt="botão para excluir" />
         </button>
-        <img class="card__image" alt="uma paisagem" />
+        <img class="card__image" alt="" />
         <div class="card__nameLike">
           <h2 class="card__imageName"></h2>
           <button class="card__likeButton">
