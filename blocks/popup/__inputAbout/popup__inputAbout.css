@@ -1,4 +1,4 @@
-.popup__inputSobre{
+.popup__inputAbout{
     width: 358px;
     height: 27.34px;
     border: none;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 930px){
-    .popup__inputSobre{
+    .popup__inputAbout{
         width: 238px;
         height: 17px;
     }

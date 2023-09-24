@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./fonts.css" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./pages/index.css" />
     <title>EUA Afora</title>
+    <style>
+      body {
+        font-family: "Inter";
+      }
+    </style>
   </head>
   <body>
     <!-- popup_opened -->
@@ -18,13 +23,13 @@
           <input
             class="popup__inputName"
             type="text"
-            name="nomePerfil"
+            name="nameProfile"
             placeholder="Nome"
           />
           <input
-            class="popup__inputSobre"
+            class="popup__inputAbout"
             type="text"
-            name="sobreMim"
+            name="aboutMe"
             placeholder="Descrição"
           />
           <button class="popup__button" type="submit">Salvar</button>
@@ -40,13 +45,13 @@
           <input
             class="popup__inputName popupNewItem__title"
             type="text"
-            name="nomePerfil"
+            name="nameProfile"
             placeholder="Title"
           />
           <input
-            class="popup__inputSobre popupNewItemUrl"
+            class="popup__inputAbout popupNewItemUrl"
             type="text"
-            name="sobreMim"
+            name="aboutMe"
             placeholder="Image URL"
           />
           <button class="popup__button" type="submit">Criar</button>
@@ -69,7 +74,7 @@
           <h1 class="header__title">Around</h1>
           <h2 class="header__subTitle">The U.S</h2>
         </header>
-        <div class="page__linha"></div>
+        <div class="page__line"></div>
         <!-- Profile -->
         <div class="profile">
           <img
@@ -106,7 +111,7 @@
         <div class="card__nameLike">
           <h2 class="card__imageName"></h2>
           <button class="card__likeButton">
-            <img src="./images/coracao.svg" alt="botão para curtir" />
+            <img src="./images/heart.svg" alt="botão para curtir" />
           </button>
         </div>
       </li>

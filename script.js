@@ -1,7 +1,7 @@
 const closeButton = document.querySelector(".popup__closeIcon");
 const buttonEditProfile = document.querySelector(".profile__editButton");
 const fieldName = document.querySelector(".popup__inputName");
-const fieldAbout = document.querySelector(".popup__inputSobre");
+const fieldAbout = document.querySelector(".popup__inputAbout");
 const formElement = document.querySelector(".popup__container");
 const initialCards = [
   {
@@ -30,7 +30,7 @@ const initialCards = [
   },
 ];
 // fechar popup
-function fecharPopup(element) {
+function closePopup(element) {
   const popup = document.querySelector(element);
   popup.classList.remove("popup_opened");
 }
@@ -40,7 +40,7 @@ function openPopup(element) {
   popup.classList.add("popup_opened");
 }
 closeButton.addEventListener("click", () => {
-  fecharPopup(".popup");
+  closePopup(".popup");
 });
 // abrir popup
 buttonEditProfile.addEventListener("click", () => {
@@ -54,12 +54,12 @@ fieldAbout.value = document.querySelector(".profile__about").innerText;
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const nameInput = document.querySelector(".popup__inputName").value;
-  const jobInput = document.querySelector(".popup__inputSobre").value;
+  const jobInput = document.querySelector(".popup__inputAbout").value;
   const fieldName = document.querySelector(".profile__name");
   const fieldAbout = document.querySelector(".profile__about");
   fieldName.innerText = nameInput;
   fieldAbout.innerText = jobInput;
-  fecharPopup();
+  closePopup();
 }
 formElement.addEventListener("submit", handleProfileFormSubmit);
 
@@ -67,9 +67,9 @@ formElement.addEventListener("submit", handleProfileFormSubmit);
 function like(button) {
   const card = button.target.closest(".card__likeButton");
   const buttonLike = card.querySelector("img");
-  if (buttonLike.src.includes("coracao")) {
+  if (buttonLike.src.includes("heart")) {
     buttonLike.src = "./images/like.svg";
-  } else buttonLike.src = "./images/coracao.svg";
+  } else buttonLike.src = "./images/heart.svg";
 }
 
 //Adicionar card
@@ -82,7 +82,7 @@ function addCard(name, link) {
   cardElement.querySelector(".card__image").alt = name;
   const remove = cardElement.querySelectorAll(".card__delete");
   remove.forEach((button) => {
-    button.addEventListener("click", cardDelet);
+    button.addEventListener("click", cardDelete);
   });
   cards.prepend(cardElement);
   const buttonLike = document.querySelectorAll(".card__likeButton");
@@ -91,8 +91,8 @@ function addCard(name, link) {
   });
 }
 //Adiciona os cards iniciais
-initialCards.forEach((inicialCard) => {
-  addCard(inicialCard.name, inicialCard.link);
+initialCards.forEach((initialCards) => {
+  addCard(initialCards.name, initialCards.link);
 });
 
 //Abrir popup para adicionar novo item
@@ -104,7 +104,7 @@ buttonAddCard.addEventListener("click", () => {
 //Fechar popup para adicionar novo intem
 const buttonCloseNewItem = document.querySelector(".closeIconNewItem");
 buttonCloseNewItem.addEventListener("click", function () {
-  fecharPopup(".popupNewItem");
+  closePopup(".popupNewItem");
 });
 
 //Adicionar um cartão inserido pelo usuário
@@ -115,17 +115,17 @@ function cardFormSubmit(evt) {
   const link = document.querySelector(".popupNewItemUrl").value;
   addCard(title, link);
   const remove = document.querySelectorAll(".card__delete");
-  remove.addEventListener("click", cardDelet);
-  fecharPopup(".popupNewItem");
+  remove.addEventListener("click", cardDelete);
+  closePopup(".popupNewItem");
 }
 formElementNewItem.addEventListener("submit", cardFormSubmit);
 
 //excluir card
-const buttonDelet = document.querySelectorAll(".card__delete");
-buttonDelet.forEach((button) => {
-  button.addEventListener("click", cardDelet);
+const buttonDelete = document.querySelectorAll(".card__delete");
+buttonDelete.forEach((button) => {
+  button.addEventListener("click", cardDelete);
 });
-function cardDelet(evt) {
+function cardDelete(evt) {
   const card = evt.target.closest(".card");
   card.remove();
 }
@@ -149,5 +149,5 @@ images.forEach((image) => {
 //fechar imagem
 const closeImage = document.querySelector(".popup__closeImage");
 closeImage.addEventListener("click", () => {
-  fecharPopup(".popup_zoom");
+  closePopup(".popup_zoom");
 });
